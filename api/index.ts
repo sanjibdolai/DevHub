@@ -16,6 +16,4 @@ server.use(jsonServer.rewriter({
 }));
 
 
-export default (req, res) => {
-    server(req, res);
-};
+export default server;
