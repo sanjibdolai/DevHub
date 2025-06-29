@@ -1,19 +1,4 @@
 {
-  "developers": [
-    {
-      "name": "Developer 1",
-      "bio": "I am the first developer of DevHub.",
-      "skills": [
-        "React",
-        "Java"
-      ],
-      "uid": "snvoszOi6EOmebdmFyV5zOqnHM83",
-      "social": {
-        "github": "123",
-        "twitter": "1456"
-      },
-      "id": 1
-    }
-  ],
+  "developers": [],
   "blogs": []
 }
