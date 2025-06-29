@@ -1,6 +1,7 @@
 import jsonServer from "json-server";
 import path from "path";
 import middleware from "../middleware.cjs";
+import { readFileSync } from "fs";
 
 const server = jsonServer.create();
 
@@ -10,7 +11,7 @@ const middlewares = jsonServer.defaults();
 const dbFilePath = path.join(process.cwd(), "db.json");
 
 // 2. Read the file's content as a string
-const dbFileContent = fs.readFileSync(dbFilePath, "utf-8");
+const dbFileContent = readFileSync(dbFilePath, "utf-8");
 
 // 3. Parse the string content into a JavaScript object
 const data = JSON.parse(dbFileContent);
