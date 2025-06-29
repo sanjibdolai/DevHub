@@ -22,7 +22,7 @@ export interface DevelopersResponse {
 
 export const developersApi = createApi({
     reducerPath: 'developersApi',
-    baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: '/api/index/' }),
     endpoints: (builder) => ({
         getDevelopers: builder.query<DevelopersResponse, { page: number; limit: number; search?: string; skills?: string[] }>({
             query: ({ page, limit, search = '', skills = [] }) => {

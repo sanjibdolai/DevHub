@@ -25,7 +25,7 @@ export interface BlogsResponse {
 
 export const blogsApi = createApi({
     reducerPath: 'blogsApi',
-    baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: '/api/index/' }),
     endpoints: (builder) => ({
         getBlogs: builder.query<BlogsResponse, { page: number; limit: number }>({
             query: ({ page, limit }) => `blogs?_page=${page}&_limit=${limit}`,
