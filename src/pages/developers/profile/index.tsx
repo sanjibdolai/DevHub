@@ -5,6 +5,7 @@ import { useGetDeveloperByUidQuery, useUpdateDeveloperMutation } from "../../../
 import { useGetBlogsQuery } from "../../../store/api/blogsApi";
 import { useAuth } from "../../../store/useAuth";
 import { useState } from "react";
+import Button from "../../../components/button";
 
 const DeveloperProfilePage = () => {
     const { id } = useParams();
@@ -117,8 +118,8 @@ const DeveloperProfilePage = () => {
                         </div>
                         {editMode && (
                             <div className="border-t border-gray-200 dark:border-gray-700 p-6 flex gap-2">
-                                <button
-                                    className="px-4 py-2 bg-indigo-600 text-white rounded"
+                                <Button
+                                    variant="primary"
                                     onClick={async () => {
                                         await updateDeveloper({
                                             id: developer.id || "",
@@ -133,8 +134,8 @@ const DeveloperProfilePage = () => {
                                         setEditMode(false);
                                         window.location.reload();
                                     }}
-                                >Save</button>
-                                <button className="px-4 py-2 bg-gray-300 rounded" onClick={() => setEditMode(false)}>Cancel</button>
+                                >Save</Button>
+                                <Button variant="secondary" onClick={() => setEditMode(false)}>Cancel</Button>
                             </div>
                         )}
                     </Card>
