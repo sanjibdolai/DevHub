@@ -4,7 +4,7 @@ type Theme = "dark" | "light"
 
 const themeSlice = createSlice({
     name: 'theme',
-    initialState: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" as Theme,
+    initialState: "light" as Theme,
     reducers: {
         toggleTheme: (state) => {
             return state == "dark" ? "light" : "dark";

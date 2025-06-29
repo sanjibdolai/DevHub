@@ -17,7 +17,7 @@ const InputField: React.FC<InputFieldProps> = ({ id, type, placeholder, icon, ..
         id={id}
         name={id}
         type={type}
-        className="w-full py-3 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+        className="w-full py-3 pl-10 pr-4 text-gray-700 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
         placeholder={placeholder}
         required
         {...rest}
