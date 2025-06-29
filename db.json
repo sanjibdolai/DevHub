@@ -15,29 +15,5 @@
       "id": 1
     }
   ],
-  "blogs": [
-    {
-      "title": "Test Project",
-      "content": " ## hgvnmbjhnm",
-      "author": "snvoszOi6EOmebdmFyV5zOqnHM83",
-      "date": "2025-06-29",
-      "comments": [
-        {
-          "id": "1751203820940",
-          "author": "snvoszOi6EOmebdmFyV5zOqnHM83",
-          "content": "test",
-          "date": "2025-06-29"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "title": "Test 2 blog",
-      "content": "hgdhgdg",
-      "author": "snvoszOi6EOmebdmFyV5zOqnHM83",
-      "date": "2025-06-29",
-      "comments": [],
-      "id": 2
-    }
-  ]
+  "blogs": []
 }
