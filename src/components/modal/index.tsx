@@ -1,4 +1,13 @@
-function Modal({ isOpen, onClose, title, children }) {
+import type { ReactNode } from "react";
+
+interface ModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    children: ReactNode;
+}
+
+function Modal({ isOpen, onClose, title, children }: ModalProps) {
     if (!isOpen) return null;
 
     return (

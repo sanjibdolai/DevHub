@@ -1,4 +1,11 @@
-const Overlay = ({ onSwitch, isLogin }) => (
+import type { FC } from "react";
+
+interface OverlayProps {
+    onSwitch: () => void;
+    isLogin: boolean;
+}
+
+const Overlay: FC<OverlayProps> = ({ onSwitch, isLogin }) => (
     <div className="relative h-full w-full">
         {/* Panel for prompting signup */}
         <div className={`absolute inset-0 p-12 text-center flex flex-col justify-center items-center transition-opacity duration-500 ${isLogin ? 'opacity-100' : 'opacity-0'}`}>
@@ -20,4 +27,5 @@ const Overlay = ({ onSwitch, isLogin }) => (
         </div>
     </div>
 );
+
 export default Overlay;

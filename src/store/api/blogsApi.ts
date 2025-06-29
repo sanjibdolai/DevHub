@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import type { QueryReturnValue, FetchBaseQueryError, FetchBaseQueryMeta } from '@reduxjs/toolkit/query';
 
 export interface Comment {
     id: string;
@@ -57,10 +58,10 @@ export const blogsApi = createApi({
             }),
         }),
         addComment: builder.mutation<Blog, { blogId: string; comment: Comment }>({
-            async queryFn({ blogId, comment }, _queryApi, _extraOptions, fetchWithBQ) {
+            async queryFn({ blogId, comment }, _queryApi, _extraOptions, fetchWithBQ): Promise<QueryReturnValue<Blog, FetchBaseQueryError, FetchBaseQueryMeta | undefined>> {
                 // Fetch the blog
                 const blogRes = await fetchWithBQ(`blogs/${blogId}`);
-                if (!blogRes.data) return { error: blogRes.error as unknown };
+                if (!blogRes.data) return { error: blogRes.error as FetchBaseQueryError };
                 const blog = blogRes.data as Blog;
                 const updatedComments = [...(blog.comments || []), comment];
                 // Update the blog with new comments
@@ -69,7 +70,7 @@ export const blogsApi = createApi({
                     method: 'PUT',
                     body: { ...blog, comments: updatedComments },
                 });
-                if (!updateRes.data) return { error: updateRes.error as unknown };
+                if (!updateRes.data) return { error: updateRes.error as FetchBaseQueryError };
                 return { data: updateRes.data as Blog };
             },
         }),
